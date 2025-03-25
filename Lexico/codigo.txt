@@ -1,0 +1,35 @@
+//Ejemplo: Hola mundo
+entero principal () {
+salida << "Hola Mundo" << fin_linea;
+regresar 0;
+}
+
+//Ejemplo: Bucles Anidados
+entero principal () {
+para (entero i = 1; i <= 10; i++) {
+para (entero j = 1; j <= 10; j++) {
+salida << i << "*" << j << "=" << i*j << fin_linea;
+}
+}
+regresar = 0;
+}
+
+//Ejemplo: Recursividad
+
+entero factorial (entero n) {
+si (n <= 1) {
+regresar 1;
+} sino {
+regresar n * factorial (n - 1);
+}
+
+}
+entero principal() {
+entero numero;
+salida << "ingrese numero";
+entrada >> numero;
+salida << "el factorial de" << numero << "es" << factorial (numero) <<
+
+fin_linea;
+regresar 0;
+}
