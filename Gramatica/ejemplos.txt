@@ -1,0 +1,101 @@
+e
+#Hola mundo
+ntero id ( ) {
+  salida << id << fin_linea ;
+  regresar id ;
+}
+#Hola mundo
+entero id ( ) { salida << id << fin_linea ; regresar id ; }
+
+entero id ( ) {
+  salida << id ;
+  regresar id ;
+}
+
+entero id ( ) { salida << id ; regresar id ; }
+
+
+bucle
+
+entero id ( ) {
+  mientras ( id < num ) {
+    salida << id ;
+  }
+  regresar id ;
+}
+
+
+entero id ( ) { mientras ( id < num ) { salida << id ; } regresar id ; }
+
+
+bucle
+
+entero id ( ) {
+  para ( id = num ; id < num ; id = num ) {
+    salida << id ;
+  }
+  regresar id ;
+}
+
+entero id ( ) { para ( id = num ; id < num ; id = num ) { salida << id ; } regresar id ; }
+
+bucle anidado
+
+entero id ( ) {
+  mientras ( id < num ) {
+    mientras ( id < num ) {
+      salida << id ;
+    }
+  }
+  regresar id ;
+}
+
+
+entero id ( ) { mientras ( id < num ) { mientras ( id < num ) { salida << id ; } } regresar id ; } 
+
+
+bucle + if 
+
+entero id ( ) {
+  para ( id = num ; id < num ; id = num ) {
+    si ( id != num ) {
+      salida << id ;
+    }
+  }
+  regresar id ;
+}
+
+entero id ( ) { para ( id = num ; id < num ; id = num ) { si ( id != num ) { salida << id ; } } regresar id ; }
+
+
+
+
+
+
+
+void id ( ) { salida << id << endl ; } entero id ( ) { regresar id ; }
+
+
+void saludar() {
+    cout << "¡Hola, Mundo!" << endl;
+}
+
+int main() {
+    saludar();
+    return 0;
+}
+
+
+
+funcion con parametro
+
+
+
+decimal id ( decimal id , decimal id ) {
+  regresar id + id ;
+}
+
+
+
+
+decimal id ( decimal id , decimal id ) { regresar id + id ; }
