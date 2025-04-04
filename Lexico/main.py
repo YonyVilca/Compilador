@@ -127,7 +127,13 @@ def t_newline(t):
 t_ignore = ' \t'
 
 def t_error(t):
-    print("Caracter ilegal '%s'" % t.value[0])  
+    token_dict = {
+        'type': 'ILEGAL',
+        'lexeme': t.value[0],
+        'line': t.lineno,
+        'column': find_column(t.lexer.lexdata, t)
+    }
+    print(token_dict)
     t.lexer.skip(1)
 
 lexer = lex.lex()

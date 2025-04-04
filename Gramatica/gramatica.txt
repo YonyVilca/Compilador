@@ -1,0 +1,51 @@
+S -> tipo id ( PARAMS ) { L }
+
+PARAMS -> tipo id PARAMS_TAIL
+PARAMS -> ''
+
+PARAMS_TAIL -> , tipo id PARAMS_TAIL
+PARAMS_TAIL -> ''
+
+tipo -> entero
+tipo -> decimal
+tipo -> caracter
+tipo -> booleano
+tipo -> cadena
+tipo -> void
+
+L -> I L
+L -> ''
+
+I -> salida << id SALTO ;
+I -> id = E ;
+I -> mientras ( C ) { L }
+I -> para ( ASIG ; C ; ASIG ) { L }
+I -> si ( C ) { L } SINO_PARTE
+I -> regresar E ;
+
+SALTO -> << fin_linea
+SALTO -> ''
+
+ASIG -> id = E
+
+SINO_PARTE -> sino { L }
+SINO_PARTE -> ''
+
+C -> E OP E C'
+C' -> && E OP E C'
+C' -> || E OP E C'
+C' -> ''
+
+OP -> <
+OP -> >
+OP -> ==
+OP -> !=
+OP -> <=
+OP -> >=
+
+E -> T E'
+E' -> + T E'
+E' -> - T E'
+E' -> ''
+T -> id
+T -> num
