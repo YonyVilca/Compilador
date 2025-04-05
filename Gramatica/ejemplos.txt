@@ -1,10 +1,10 @@
 e
 #Hola mundo
-ntero id ( ) {
+entero id ( ) {
   salida << id << fin_linea ;
   regresar id ;
 }
-#Hola mundo
+
 entero id ( ) { salida << id << fin_linea ; regresar id ; }
 
 entero id ( ) {
@@ -53,6 +53,20 @@ entero id ( ) {
 
 entero id ( ) { mientras ( id < num ) { mientras ( id < num ) { salida << id ; } } regresar id ; } 
 
+entero id ( ) {
+  mientras ( id < num ) {
+    mientras ( id < num ) {
+      mientras ( id > num ) {
+        salida << id ;
+      }
+      
+    }
+  }
+  regresar id ;
+}
+
+entero id ( ) { mientras ( id < num ) { mientras ( id < num ) { mientras ( id > num ) { salida << id ; } } } regresar id ; }
+
 
 bucle + if 
 
@@ -99,3 +113,82 @@ decimal id ( decimal id , decimal id ) {
 
 
 decimal id ( decimal id , decimal id ) { regresar id + id ; }
+
+
+// EJEMPLOS: 1 //
+
+int main() {
+    cout << mensaje << endl;
+    return 0;
+}
+
+
+entero principal() {
+    salida << mensaje << fin_linea;
+    regresar id;
+}
+
+
+
+TIPO_ENTERO PRINCIPAL PARENTESIS_IZQ PARENTESIS_DER LLAVE_IZQ SALIDA MENOR_QUE MENOR_QUE IDENTIFICADOR MENOR_QUE MENOR_QUE FIN_LINEA PUNTO_COMA REGRESAR IDENTIFICADOR PUNTO_COMA LLAVE_DER
+
+
+// EJEMPLOS: 2 //
+
+
+int main() {
+    while (a < 10) {
+        for (int i = 0; i < 5; i = i + 1) {
+            if (i != 3) {
+                std::cout << i << std::endl;
+            } else {
+                std::cout << "salto";
+            }
+        }
+    }
+    return a;
+}
+
+
+entero principal() {
+    mientras (a < 10) {
+        para (i = 0; i < 5; i = i + 1) {
+            si (i != 3) {
+                salida << i << fin_linea;
+            } sino {
+                salida << "salto";
+            }
+        }
+    }
+    regresar a;
+}
+
+
+TIPO_ENTERO PRINCIPAL PARENTESIS_IZQ PARENTESIS_DER LLAVE_IZQ MIENTRAS PARENTESIS_IZQ IDENTIFICADOR MENOR_QUE ENTERO PARENTESIS_DER LLAVE_IZQ PARA PARENTESIS_IZQ IDENTIFICADOR IGUAL ENTERO PUNTO_COMA IDENTIFICADOR MENOR_QUE ENTERO PUNTO_COMA IDENTIFICADOR IGUAL IDENTIFICADOR SUMA ENTERO PARENTESIS_DER LLAVE_IZQ SI PARENTESIS_IZQ IDENTIFICADOR DIFERENTE ENTERO PARENTESIS_DER LLAVE_IZQ SALIDA MENOR_QUE MENOR_QUE IDENTIFICADOR MENOR_QUE MENOR_QUE FIN_LINEA PUNTO_COMA LLAVE_DER SINO LLAVE_IZQ SALIDA MENOR_QUE MENOR_QUE CADENA PUNTO_COMA LLAVE_DER LLAVE_DER LLAVE_DER REGRESAR IDENTIFICADOR PUNTO_COMA LLAVE_DER
+
+// EJEMPLOS: 3 //
+
+
+double sumar(double a, double b) {
+    return (a + b) * 2;
+}
+
+int main() {
+    sumar(10.5, 5.0);
+    return 0;
+}
+
+
+
+decimal sumar(decimal a, decimal b) {
+    regresar (a + b) * 2;
+}
+
+entero principal() {
+    sumar(10.5, 5.0);
+    regresar 0;
+}
+
+
+
+TIPO_DECIMAL IDENTIFICADOR PARENTESIS_IZQ TIPO_DECIMAL IDENTIFICADOR COMA TIPO_DECIMAL IDENTIFICADOR PARENTESIS_DER LLAVE_IZQ REGRESAR PARENTESIS_IZQ IDENTIFICADOR SUMA IDENTIFICADOR PARENTESIS_DER MULTIPLICACION ENTERO PUNTO_COMA LLAVE_DER  TIPO_ENTERO PRINCIPAL PARENTESIS_IZQ PARENTESIS_DER LLAVE_IZQ IDENTIFICADOR PARENTESIS_IZQ DECIMAL COMA DECIMAL PARENTESIS_DER PUNTO_COMA REGRESAR ENTERO PUNTO_COMA LLAVE_DER
