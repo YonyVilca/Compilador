@@ -1,0 +1,5 @@
+,int,mul,mas,para_a,para_c,$
+E,T X,,,T X,,
+X,,,mas E,,e,e
+T,int Y,,,para_a E para_c,,
+Y,,mul T,e,,e,e
