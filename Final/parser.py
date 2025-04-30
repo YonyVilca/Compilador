@@ -27,10 +27,18 @@ def cargar_tabla_ll1(ruta_csv):
         for fila in lector:
             no_terminal = fila[0]
             producciones = [celda.strip() for celda in fila[1:]]
-            tabla[no_terminal] = {
-                terminal: produccion.split() if produccion else []
-                for terminal, produccion in zip(encabezados, producciones)
-            }
+            
+            tabla[no_terminal] = {}
+            for terminal, produccion in zip(encabezados, producciones):
+                if produccion:
+                    # Elimina "NO_TERMINAL ->" si lo contiene
+                    if produccion.startswith(f"{no_terminal} ->"):
+                        produccion = produccion.replace(f"{no_terminal} ->", "").strip()
+                    simbolos = produccion.split()
+                else:
+                    simbolos = []
+                tabla[no_terminal][terminal] = simbolos
+
         return tabla
 
 
@@ -49,9 +57,9 @@ def cargar_tokens_desde_csv(ruta_csv):
 
 # LL(1)
 def parse_ll1(tokens, tabla_ll1):
-    stack = ['$', 'E']
+    stack = ['$', 'FUNCIONES']  
     index = 0
-    nodo_raiz = Node('E')
+    nodo_raiz = Node('FUNCIONES')  
     node_stack = [Node('$'), nodo_raiz]
 
     while stack:
@@ -85,16 +93,18 @@ def parse_ll1(tokens, tabla_ll1):
         elif top == current_token:
             nodo_actual.token = tokens[index]
             index += 1
+        elif top == 'ε':
+            nodo_actual.agregar_hijo(Node('ε'))
         else:
             return f" Error en token '{current_token}' (línea: {linea}, columna: {columna}): se esperaba '{top}'", None
 
-    
     if index >= len(tokens):
-        return "✅ Cadena aceptada", nodo_raiz
+            return "✅ Cadena aceptada", nodo_raiz
     elif tokens[index]['lexema'] == '$':
         return "✅ Cadena aceptada", nodo_raiz
     else:
         return f" Error: tokens restantes sin analizar desde '{tokens[index]['lexema']}'", None
+
 
 def generar_dot(node, dot_lines=None, parent_id=None, counter=[0]):
     if dot_lines is None:
@@ -123,7 +133,7 @@ def generar_dot(node, dot_lines=None, parent_id=None, counter=[0]):
 
 # Ejecutar y probar
 if __name__ == "__main__":
-    tabla = cargar_tabla_ll1('hoja1.csv')
+    tabla = cargar_tabla_ll1('tabla.csv')
     tokens = cargar_tokens_desde_csv('token.csv')
     resultado, arbol = parse_ll1(tokens, tabla)
     print(resultado)
@@ -132,8 +142,9 @@ if __name__ == "__main__":
         print("\n🌳 Árbol sintáctico:")
         arbol.imprimir()
 
-    # Guardar archivo .dot
-    dot_code = generar_dot(arbol)
-    with open("arbol.dot", "w") as f:
-        f.write(dot_code)
-    print("📄 Archivo 'arbol.dot' generado correctamente.")
+        dot_code = generar_dot(arbol)
+        with open("arbol.dot", "w") as f:
+            f.write(dot_code)
+        print("📄 Archivo 'arbol.dot' generado correctamente.")
+    else:
+        print("❌ No se generó el árbol debido a errores en el análisis sintáctico.")

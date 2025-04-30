@@ -7,6 +7,7 @@ reserved = {
     'booleano': 'TIPO_BOOLEANO',
     'cadena': 'TIPO_CADENA',
     'regresar': 'REGRESAR',
+    'void': 'VOID',
     'principal': 'PRINCIPAL',
     'si': 'SI',
     'sino': 'SINO',
@@ -144,7 +145,7 @@ def find_column(input, token):
         last_cr = -1
     column = (token.lexpos - last_cr)
     return column
-
+lexer = lex.lex()
 f = open('Lexico/codigo.txt', 'r')
 data = f.read()
 lexer.input(data)

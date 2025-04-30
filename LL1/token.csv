@@ -1,6 +1,12 @@
 lexema,linea,columna
 para_a,1,1
+para_a,1,1
 int,1,5
-mas,1,9
+mul,1,9
 int,1,13
 para_c,1,17
+mas,1,21
+int,1,25
+para_c,1,29
+
+
