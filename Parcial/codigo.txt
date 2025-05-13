@@ -1,0 +1,8 @@
+decimal sumar(decimal a, decimal b) {
+    regresar (a + b) * 2;
+}
+
+entero principal() {
+    sumar(10.5, 5.0);
+    regresar 0;
+}
